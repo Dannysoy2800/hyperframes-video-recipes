@@ -1,0 +1,24 @@
+{
+  "project": "hyperframes-video-recipes",
+  "version": 1,
+  "recipes": [
+    {
+      "id": "launch-teaser",
+      "path": "recipes/launch-teaser",
+      "durationSeconds": 6,
+      "tags": ["launch", "saas", "kinetic-type", "brand"]
+    },
+    {
+      "id": "data-explainer",
+      "path": "recipes/data-explainer",
+      "durationSeconds": 8,
+      "tags": ["data", "explainer", "chart", "editorial"]
+    },
+    {
+      "id": "kinetic-lyric",
+      "path": "recipes/kinetic-lyric",
+      "durationSeconds": 7,
+      "tags": ["music", "lyric", "social", "kinetic-type"]
+    }
+  ]
+}

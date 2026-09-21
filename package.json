@@ -1,0 +1,20 @@
+{
+  "name": "hyperframes-video-recipes",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Production-ready editable HTML video recipes for HyperFrames.",
+  "type": "module",
+  "scripts": {
+    "check": "npm run check:launch && npm run check:data && npm run check:lyric",
+    "check:launch": "hyperframes check recipes/launch-teaser --snapshots",
+    "check:data": "hyperframes check recipes/data-explainer --snapshots",
+    "check:lyric": "hyperframes check recipes/kinetic-lyric --snapshots",
+    "new:recipe": "node scripts/new-recipe.mjs"
+  },
+  "keywords": ["hyperframes", "html-video", "motion-design", "gsap", "video-templates"],
+  "license": "MIT",
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "hyperframes": "^0.8.58"
+  }
+}

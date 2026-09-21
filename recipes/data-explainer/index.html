@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <title>Data Explainer</title>
+  <script src="assets/gsap.min.js"></script>
+  <style>
+    *{box-sizing:border-box} body{margin:0;background:#f2eee7;color:#1f2b2b;font-family:Arial,sans-serif} #root{position:relative;width:1920px;height:1080px;overflow:hidden;background:#f2eee7}.clip{position:absolute;inset:0;overflow:hidden}.wash{position:absolute;inset:0;background:radial-gradient(circle at 78% 22%,#d8e5d8 0 12%,transparent 34%),#f2eee7}.eyebrow{position:absolute;left:130px;top:105px;font:700 23px monospace;letter-spacing:3px;color:#a14e37}.title{position:absolute;left:130px;top:175px;width:720px;font-size:112px;line-height:.95;letter-spacing:-5px;margin:0}.dek{position:absolute;left:135px;top:540px;width:580px;font-size:31px;line-height:1.25}.panel{position:absolute;right:120px;top:120px;width:900px;height:710px;background:#fffaf2;border:4px solid #1f2b2b;border-radius:28px;padding:54px 60px;box-shadow:18px 18px 0 #c7d5c7}.panel h2{margin:0;font-size:30px}.axis{position:absolute;left:70px;right:55px;bottom:90px;height:3px;background:#1f2b2b}.yaxis{position:absolute;left:70px;top:140px;bottom:90px;width:3px;background:#1f2b2b}.bar{position:absolute;bottom:93px;width:108px;background:#a14e37;border-radius:10px 10px 0 0;transform-origin:bottom}.b1{left:160px;height:180px}.b2{left:330px;height:310px;background:#d8a23d}.b3{left:500px;height:420px;background:#7b9f84}.b4{left:670px;height:520px;background:#1f2b2b}.lab{position:absolute;bottom:42px;font:700 20px monospace}.l1{left:185px}.l2{left:355px}.l3{left:525px}.l4{left:695px}.note{position:absolute;right:120px;bottom:115px;background:#d8a23d;color:#1f2b2b;padding:22px 28px;font-size:24px;font-weight:700;transform:rotate(-3deg)}.footer{position:absolute;left:130px;bottom:92px;font:700 20px monospace;letter-spacing:2px}.dot{position:absolute;width:30px;height:30px;border-radius:50%;background:#a14e37;right:105px;top:84px}
+  </style>
+</head>
+<body>
+<div id="root" data-composition-id="data-explainer" data-start="0" data-width="1920" data-height="1080" data-duration="8" data-fps="30">
+<section id="scene" class="clip" data-start="0" data-duration="8" data-track-index="1">
+<div id="wash" class="wash"></div><div id="dot" class="dot"></div><div id="eyebrow" class="eyebrow">THE COMPOUND EFFECT / 2026</div><h1 id="title" class="title">Small gains<br><span style="color:#a14e37">stack up.</span></h1><p id="dek" class="dek">A data-storytelling pattern: one claim, one chart, and a visual rhythm that makes the takeaway hard to miss.</p>
+<div id="panel" class="panel"><h2>Weekly retention, indexed</h2><div id="yaxis" class="yaxis"></div><div id="axis" class="axis"></div><div id="bar1" class="bar b1"></div><div id="bar2" class="bar b2"></div><div id="bar3" class="bar b3"></div><div id="bar4" class="bar b4"></div><div id="lab1" class="lab l1">W1</div><div id="lab2" class="lab l2">W2</div><div id="lab3" class="lab l3">W3</div><div id="lab4" class="lab l4">W4</div><div id="note" class="note">+42%<br><span style="font-size:18px">in four weeks</span></div></div><div id="footer" class="footer">SOURCE: INTERNAL COHORT STUDY / EDITABLE CHART</div>
+</section></div>
+<script>
+window.__timelines=window.__timelines||{}; const tl=gsap.timeline({paused:true});
+tl.from('#wash',{opacity:0,duration:.8},0).from('#dot',{scale:0,duration:.5,ease:'back.out(2)'},.2).from('#eyebrow',{x:-55,opacity:0,duration:.6,ease:'power3.out'},.35).from('#title',{y:100,opacity:0,duration:1,ease:'power4.out'},.6).from('#dek',{y:35,opacity:0,duration:.7,ease:'power2.out'},1.5).from('#panel',{x:180,opacity:0,rotation:2,duration:1,ease:'power3.out'},.7).from(['#yaxis','#axis'],{scaleY:0,duration:.5,ease:'power2.out'},1.6).from('#bar1',{scaleY:0,duration:.55,ease:'power2.out'},1.9).from('#bar2',{scaleY:0,duration:.55,ease:'power2.out'},2.2).from('#bar3',{scaleY:0,duration:.55,ease:'power2.out'},2.5).from('#bar4',{scaleY:0,duration:.6,ease:'power2.out'},2.8).from(['#lab1','#lab2','#lab3','#lab4'],{y:18,opacity:0,stagger:.12,duration:.35},3.3).from('#note',{scale:0,rotation:12,opacity:0,duration:.65,ease:'back.out(1.6)'},4).from('#footer',{opacity:0,duration:.5},4.7);
+window.__timelines['data-explainer']=tl;
+</script>
+</body></html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <title>Launch Teaser</title>
+  <script src="assets/gsap.min.js"></script>
+  <style>
+    :root { --ink:#17211f; --paper:#e9efe8; --acid:#d9ff52; --coral:#ff6e56; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--ink); color:var(--paper); font-family:Arial, sans-serif; }
+    #root { position:relative; width:1920px; height:1080px; overflow:hidden; background:var(--ink); }
+    .clip { position:absolute; inset:0; overflow:hidden; }
+    .field { position:absolute; inset:0; background:var(--ink); }
+    .grid { position:absolute; inset:-100px; opacity:.22; background-image:linear-gradient(rgba(233,239,232,.18) 2px, transparent 2px),linear-gradient(90deg, rgba(233,239,232,.18) 2px, transparent 2px); background-size:90px 90px; transform:rotate(-7deg) scale(1.15); }
+    .orb { position:absolute; border-radius:50%; filter:blur(2px); }
+    .orb.a { width:620px; height:620px; background:var(--coral); top:-160px; right:-120px; opacity:.8; }
+    .orb.b { width:420px; height:420px; background:var(--acid); bottom:-190px; left:120px; opacity:.75; }
+    .kicker { position:absolute; top:120px; left:140px; font-size:24px; letter-spacing:7px; font-weight:700; }
+    .rule { position:absolute; top:174px; left:140px; width:1640px; height:3px; background:var(--acid); transform-origin:left; }
+    h1 { position:absolute; left:135px; top:265px; width:1300px; margin:0; font-size:166px; line-height:.88; letter-spacing:-8px; text-transform:uppercase; }
+    .stamp { position:absolute; right:150px; top:320px; width:240px; height:240px; border:5px solid var(--paper); border-radius:50%; display:grid; place-items:center; text-align:center; font-size:26px; line-height:1.05; font-weight:700; transform:rotate(13deg); }
+    .sub { position:absolute; left:145px; bottom:164px; font-size:34px; max-width:760px; line-height:1.2; }
+    .meta { position:absolute; right:150px; bottom:170px; text-align:right; font-family:monospace; font-size:22px; line-height:1.6; }
+    .bar { position:absolute; bottom:108px; left:145px; width:1630px; height:12px; background:var(--paper); transform-origin:left; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="launch-teaser" data-start="0" data-width="1920" data-height="1080" data-duration="6" data-fps="30">
+    <section id="scene" class="clip" data-start="0" data-duration="6" data-track-index="1">
+      <div id="field" class="field"></div><div id="grid" class="grid"></div><div id="orbA" class="orb a"></div><div id="orbB" class="orb b"></div>
+      <div id="kicker" class="kicker">NORTHSTAR / SYSTEM 01</div><div id="rule" class="rule"></div>
+      <h1 id="headline">Make room<br><span style="color:var(--acid)">for better</span><br>ideas.</h1>
+      <div id="stamp" class="stamp">NEW<br>TOOLS<br>FOR<br>THINKING</div>
+      <div id="sub" class="sub">A launch-teaser pattern: oversized type, a graphic stamp, and layered motion that can be rebranded in minutes.</div>
+      <div id="meta" class="meta">RELEASE 01.04<br>EDITABLE / 1920×1080<br>00:06 / 30FPS</div><div id="bar" class="bar"></div>
+    </section>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused:true });
+    tl.from('#grid',{opacity:0,rotation:-18,duration:.9,ease:'power2.out'},0)
+      .from('#orbA',{scale:.35,x:260,y:-160,opacity:0,duration:1.1,ease:'back.out(1.2)'},0)
+      .from('#orbB',{scale:.25,x:-180,y:180,opacity:0,duration:1.2,ease:'power3.out'},.1)
+      .from('#kicker',{x:-80,opacity:0,duration:.5,ease:'power3.out'},.35)
+      .from('#rule',{scaleX:0,duration:.7,ease:'expo.out'},.5)
+      .from('#headline',{y:180,opacity:0,rotation:3,duration:1.05,ease:'power4.out'},.7)
+      .from('#stamp',{scale:0,rotation:-24,opacity:0,duration:.9,ease:'back.out(1.7)'},1.4)
+      .from('#sub',{y:50,opacity:0,duration:.7,ease:'power2.out'},2.25)
+      .from('#meta',{x:80,opacity:0,duration:.65,ease:'power3.out'},2.55)
+      .from('#bar',{scaleX:0,duration:1.6,ease:'power2.inOut'},3.1)
+      .to('#stamp',{rotation:8,duration:1.5,ease:'sine.inOut'},3.2);
+    window.__timelines['launch-teaser'] = tl;
+  </script>
+</body>
+</html>
