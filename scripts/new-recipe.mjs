@@ -1,5 +1,6 @@
 import { cp, mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const rawName = process.argv[2];
 if (!rawName) {
@@ -13,7 +14,7 @@ if (!name) {
   process.exit(1);
 }
 
-const root = new URL("..", import.meta.url).pathname;
+const root = fileURLToPath(new URL("..", import.meta.url));
 const destination = join(root, "recipes", name);
 await mkdir(join(root, "recipes"), { recursive: true });
 await cp(join(root, "recipes", "launch-teaser"), destination, { recursive: true, errorOnExist: true });
